@@ -3,7 +3,7 @@ pipeline{
         stages {
             stage("one") {
                 steps {
-                    sh 'echo "hello from $HOSTNAME"'
+                    sh 'echo "hello hello from $HOSTNAME"'
                 }
             }
         }
