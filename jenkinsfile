@@ -1,6 +1,17 @@
-def loop1(list){
+def loop1{
     sh "echo 'For loop test'"
     for(int i=0;i!=10;i++){
         sh 'echo "${i}"'
         }
         }
+pipeline{
+    agent any{
+        stages{
+            stage('one'){
+                steps{
+                    loop1()
+                    }
+                    }
+                    }
+                    }
+                    }
