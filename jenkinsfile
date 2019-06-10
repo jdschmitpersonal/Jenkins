@@ -5,7 +5,7 @@ def loop1(list){
         }
         }
 pipeline{
-    agent any{
+    agent any
         stages{
             stage('one'){
                 steps{
