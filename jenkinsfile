@@ -4,9 +4,11 @@ pipeline{
             stage("one") {
                 steps {
                     sh 'echo "Script is running from $HOSTNAME"'
-                    sh 'cat /var/log/secure | grep -E "root" | grep -Ei "session" > /var/log/rootsessions'
+                    sh 'cat /var/log/secure | grep -E "root" | grep -Ei "session" | tail -n 1 > /var/log/rootsessions'
                     sh 'cat /var/log/rootsessions'
-                    
+                    sh 'cd /mnt/config'
+                    sh 'javac experiment.class'
+                    sh 'java experiment.class'
                 }
             }
         }
