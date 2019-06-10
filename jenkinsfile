@@ -6,7 +6,7 @@ pipeline{
                     sh 'echo "Script is running from $HOSTNAME"'
                     sh 'cat /var/log/secure | grep -E "root" | grep -Ei "session" | tail -n 1 > /var/log/rootsessions'
                     sh 'cat /var/log/rootsessions'
-                    sh 'cd /mnt/config'
+                    sh 'cp /mnt/config/experiment.java .'
                     sh 'javac experiment.java'
                     sh 'java experiment'
                     sh 'rm *.class'
