@@ -1,5 +1,5 @@
 pipeline{
-    agent any
+    agent { docker { image 'ubuntu:15.10' } }
         stages{
             stage("Start"){
                 steps{
