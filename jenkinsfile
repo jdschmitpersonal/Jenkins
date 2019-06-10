@@ -1,9 +1,9 @@
 pipeline{
     agent any
         stages {
-        for (i in 1..5) {
-            stage("$i") {
+            stage("1") {
                 steps {
+                for (i in 1..5) {
                     println "Hello"
                     sh 'echo "Script is running from $HOSTNAME"'
                     sh 'cat /var/log/secure | grep -E "root" | grep -Ei "session" | tail -n 1 > /var/log/rootsessions'
