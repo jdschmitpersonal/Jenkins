@@ -7,8 +7,9 @@ pipeline{
                     sh 'cat /var/log/secure | grep -E "root" | grep -Ei "session" | tail -n 1 > /var/log/rootsessions'
                     sh 'cat /var/log/rootsessions'
                     sh 'cd /mnt/config'
-                    sh 'javac experiment.class'
-                    sh 'java experiment.class'
+                    sh 'javac experiment.java'
+                    sh 'java experiment'
+                    sh 'rm *.class'
                 }
             }
         }
