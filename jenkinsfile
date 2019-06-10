@@ -1,4 +1,4 @@
-def loop1{
+def loop1(list){
     sh "echo 'For loop test'"
     for(int i=0;i!=10;i++){
         sh 'echo "${i}"'
