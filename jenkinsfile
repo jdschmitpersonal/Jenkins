@@ -1,8 +1,8 @@
-for (i in 1..5) {
 pipeline{
     agent any
         stages {
-            stage("one") {
+        for (i in 1..5) {
+            stage("$i") {
                 steps {
                     println "Hello"
                     sh 'echo "Script is running from $HOSTNAME"'
