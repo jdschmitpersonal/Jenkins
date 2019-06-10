@@ -4,6 +4,8 @@ pipeline{
             stage("one") {
                 steps {
                     sh 'echo "hello hello from $HOSTNAME"'
+                    sh 'sleep 30'
+                    sh 'echo "Oh is that all?"'
                 }
             }
         }
