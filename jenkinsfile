@@ -3,7 +3,24 @@ pipeline{
         stages {
             stage("1") {
                 steps {
-                for (i in 1..5) {
+                abcs = ['a', 'b', 'c']
+
+node( {
+    stage('Test 1: loop of echo statements') {
+        echo_all(abcs)
+    }
+    
+    stage('Test 2: loop of sh commands') {
+        loop_of_sh(abcs)
+    }
+    
+    stage('Test 3: loop with preceding SH') {
+        loop_with_preceding_sh(abcs)
+    }
+    
+    stage('Test 4: traditional for loop') {
+        traditional_int_for_loop(abcs)
+    stage('Test5: original'){
                     println "Hello"
                     sh 'echo "Script is running from $HOSTNAME"'
                     sh 'cat /var/log/secure | grep -E "root" | grep -Ei "session" | tail -n 1 > /var/log/rootsessions'
